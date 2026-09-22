@@ -1,0 +1,17 @@
+export const personalConfig = {
+  name: "Mustansir Mota Gharwala",
+  firstName: "Mustansir",
+  initials: "MM",
+  logoLetter: "M",
+  title: "Full Stack Developer",
+  roleHeadline: "Full Stack Engineer & Backend Architect",
+  specialtyTagline: "Engineering resilient business ecosystems & high-performance automation with Python, Django, and React.",
+  email: "mustansir604@gmail.com",
+  phone: "+91 7742752753",
+  location: "Pune, Maharashtra, India",
+  github: "https://github.com/mustansir-mota-ghar-wala",
+  linkedin: "https://www.linkedin.com/in/mustansir-mota-ghar-wala/",
+  liveStore: "https://burhani.store",
+  resumePath: "/resume/Mustansir_Resume.pdf",
+  whatsappUrl: "https://wa.me/917742752753?text=Hi%20Mustansir,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!",
+};
