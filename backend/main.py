@@ -9,12 +9,21 @@ load_dotenv()
 
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "*")
 
+# FRONTEND_ORIGIN accepts one or many comma-separated origins, e.g.
+# FRONTEND_ORIGIN=https://my-portfolio.vercel.app,http://localhost:5173
+ALLOWED_ORIGINS = [origin.strip() for origin in FRONTEND_ORIGIN.split(",") if origin.strip()] or ["*"]
+ALLOW_ALL_ORIGINS = "*" in ALLOWED_ORIGINS
+
 app = FastAPI(title="Portfolio API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_ORIGIN] if FRONTEND_ORIGIN != "*" else ["*"],
-    allow_credentials=True,
+    allow_origins=ALLOWED_ORIGINS,
+    # A wildcard origin must not be combined with credentials: browsers reject
+    # "Access-Control-Allow-Origin: *" on credentialed requests. This API is
+    # public, read-only (GET) and cookie-free, so credentials are only enabled
+    # when an explicit origin allowlist is configured.
+    allow_credentials=not ALLOW_ALL_ORIGINS,
     allow_methods=["GET"],
     allow_headers=["*"],
 )
