@@ -15,16 +15,14 @@ import { usePortfolioData } from './hooks/usePortfolioData';
 import { useReveal } from './hooks/useReveal';
 
 export default function App() {
-  // Theme state: defaults to 'dark', persists to localStorage
+  // Theme state: persists to localStorage; first-time visitors get light mode.
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       return savedTheme;
     }
-    // Check system preference
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'dark'; // obsidian dark mode by default per specs
+    // No saved preference — start with light mode (no Flash of Unstyled Theme).
+    return 'light';
   });
 
   useEffect(() => {
