@@ -1,15 +1,16 @@
 PROFILE = {
     "name": "Mustansir Mota Gharwala",
-    "headline": "Full Stack Developer & Backend Architect",
+    "headline": "Software Engineer & DevOps Engineer",
     "location": "Pune, Maharashtra, India",
     "email": "mustansir604@gmail.com",
     "description": (
         "Full-Stack Developer with hands-on experience building and deploying production-grade web applications "
-        "using Django, Python, PostgreSQL, and React.js. Skilled in integrating third-party APIs (Razorpay, Groq AI, "
-        "Cloudinary, Fast2SMS), building AI-powered features, and deploying live on cloud platforms like Render. "
+        "using Python, Django, FastAPI and React.js, backed by strong object-oriented fundamentals in Java. "
+        "Comfortable across the delivery pipeline — Docker, GitHub Actions CI/CD, Linux shell and cloud deployments "
+        "on Render — and skilled at integrating third-party APIs (Razorpay, Groq AI, Cloudinary, Fast2SMS). "
         "Currently running a live e-commerce platform at burhani.store."
     ),
-    "tech_line": ["Python", "Django 6.0", "REST APIs", "React.js", "PostgreSQL", "FastAPI", "Docker"],
+    "tech_line": ["Python", "Java", "FastAPI", "React.js", "PostgreSQL", "Docker", "CI/CD"],
     "github": "https://github.com/mustansir-mota-ghar-wala",
     "linkedin": "https://www.linkedin.com/in/mustansir-mota-ghar-wala/",
     "resume": "/resume/Mustansir_Resume.pdf",

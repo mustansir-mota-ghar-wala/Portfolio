@@ -1,20 +1,20 @@
 export const portfolioData = {
   hero: {
     greeting: "Hi, I'm Mustansir",
-    headlineRole: "Full Stack Developer",
-    headlineAccent: "Backend Architect",
+    headlineRole: "Software Engineer",
+    headlineAccent: "DevOps Engineer",
     summary:
-      "Full-Stack Developer with hands-on experience building and deploying production-grade web applications using Django, Python, PostgreSQL, and React.js. Skilled in integrating third-party APIs (Razorpay, Groq AI, Cloudinary, Fast2SMS), building AI-powered features, and deploying live on cloud platforms like Render. Currently running a live e-commerce platform at burhani.store.",
-    techStack: ["Python", "Django 6.0", "REST APIs", "React.js", "PostgreSQL", "FastAPI", "Docker"],
+      "Full-Stack Developer with hands-on experience building and deploying production-grade web applications using Python, Django, FastAPI and React.js, backed by strong object-oriented fundamentals in Java. Comfortable across the delivery pipeline — Docker, GitHub Actions CI/CD, Linux shell and cloud deployments on Render — and skilled at integrating third-party APIs (Razorpay, Groq AI, Cloudinary, Fast2SMS). Currently running a live e-commerce platform at burhani.store.",
+    techStack: ["Python", "Java", "FastAPI", "React.js", "PostgreSQL", "Docker", "CI/CD"],
     chips: [
+      "Python",
+      "Java",
       "Django 6.0",
-      "PostgreSQL",
-      "React.js",
       "FastAPI",
-      "REST APIs",
-      "Groq AI",
-      "Razorpay",
-      "Gunicorn",
+      "React.js",
+      "PostgreSQL",
+      "Docker",
+      "GitHub Actions",
       "DevOps"
     ],
     status: "Open to opportunities"
@@ -25,17 +25,18 @@ export const portfolioData = {
     title: "Who I Am",
     paragraphs: [
       "I am a passionate Full-Stack Developer with a deep-seated dedication to architectural integrity, clean code, and zero-touch business automation. My engineering journey is defined by designing production-grade software that bridges robust backend systems with intuitive, responsive user experiences.",
-      "With extensive hands-on experience in Python and the Django ecosystem, I have architected and deployed live commercial platforms like Burhani (burhani.store), structured relational database schemas in PostgreSQL, and built statutory compliance engines for Smart India Hackathon 2026 (MediPrep). I specialize in automated double-entry accounting engines, statutory GST calculations, and mission-critical API integrations ranging from Razorpay payment verification to Groq AI LLM interfaces.",
+      "With extensive hands-on experience in Python and the Django ecosystem, I have architected and deployed live commercial platforms like Burhani (burhani.store), structured relational database schemas in PostgreSQL, and built statutory compliance engines for Smart India Hackathon 2026 (MediPrep). I specialize in automated double-entry accounting engines, statutory GST calculations, and mission-critical API integrations ranging from Razorpay payment verification to Groq AI LLM interfaces. My core delivery stack is Python (Django, FastAPI) with React on the front end, backed by strong object-oriented fundamentals in Java and C/C++.",
       "Currently pursuing my Master of Computer Applications (MCA) at Vishwakarma University, Pune, I continually level up my engineering capabilities—recently completing specialized training in DevOps & Cloud Engineering, CI/CD pipelines, and containerization. My goal is to engineer resilient digital systems that solve high-impact commercial problems."
     ],
     currentFocus: [
-      "Django 6.0 & High-Throughput REST APIs",
+      "Django 6.0, FastAPI & High-Throughput REST APIs",
       "React.js & Modern Component Architecture",
       "Automated Double-Entry Accounting & GST Engines",
       "PostgreSQL Query Optimization & Indexing",
       "Cloud Deployments (Render, Gunicorn, WhiteNoise)",
       "Hardware-Integrated IoT Verification (Barcode/Speech)",
       "DevOps CI/CD Pipelines & Containerization",
+      "Java & Object-Oriented Design",
       "LLM & Groq AI Agent Integrations"
     ]
   },

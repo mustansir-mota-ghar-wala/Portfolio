@@ -1,7 +1,7 @@
 .hero {
   min-height: calc(100vh - 64px);
-  padding-top: calc(64px + 3rem);
-  padding-bottom: 4rem;
+  padding-top: calc(64px + 2.5rem);
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,7 +52,7 @@
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero__pulse-dot {
@@ -64,12 +64,13 @@
 }
 
 .hero__headline {
-  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
   color: var(--color-text);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .hero__headline-accent {
@@ -80,11 +81,11 @@
 }
 
 .hero__summary {
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   color: var(--color-text-secondary);
   max-width: 620px;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Tech Stack Monospace Bar */
@@ -100,7 +101,7 @@
   background-color: var(--color-bg-subtle);
   border: 1px dashed var(--color-border);
   border-radius: var(--radius-md);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero__tech-item {
@@ -117,7 +118,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.75rem;
 }
 
 /* Social & Location Row */
@@ -251,7 +252,7 @@
 
 /* Scroll Chevron Indicator */
 .hero__scroll-hint {
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,5 +277,39 @@
   .hero__visual-card-col {
     display: flex;
     justify-content: center;
+  }
+}
+
+/* Short-viewport tuning (laptops ~720-800px tall): keep the whole hero —
+   including the scroll chevron — inside the first screen. */
+@media (max-height: 800px) {
+  .hero {
+    padding-top: calc(64px + 1.75rem);
+  }
+
+  .hero__headline {
+    font-size: clamp(1.5rem, 2.9vw, 2.25rem);
+    margin-bottom: 0.875rem;
+  }
+
+  .hero__summary {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero__greeting-pill {
+    margin-bottom: 1rem;
+  }
+
+  .hero__tech-bar {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero__ctas {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero__scroll-hint {
+    margin-top: 1rem;
   }
 }

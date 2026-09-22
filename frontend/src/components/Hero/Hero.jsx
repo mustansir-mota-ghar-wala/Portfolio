@@ -13,11 +13,11 @@ import './Hero.css';
 export default function Hero({ data }) {
   const {
     greeting = `Hi, I'm ${personalConfig.firstName}`,
-    headlineRole = "Full Stack Developer",
-    headlineAccent = "Backend Architect",
+    headlineRole = "Software Engineer",
+    headlineAccent = "DevOps Engineer",
     summary = personalConfig.specialtyTagline,
-    techStack = ["Python", "Django 6.0", "REST APIs", "React.js", "PostgreSQL", "Docker"],
-    chips = ["Django 6.0", "PostgreSQL", "React.js", "FastAPI", "REST APIs", "Groq AI", "Razorpay"],
+    techStack = ["Python", "Java", "FastAPI", "React.js", "PostgreSQL", "Docker", "CI/CD"],
+    chips = ["Python", "Java", "Django 6.0", "FastAPI", "React.js", "PostgreSQL", "Docker", "GitHub Actions", "DevOps"],
     status = "Open to opportunities"
   } = data || {};
 
@@ -32,10 +32,15 @@ export default function Hero({ data }) {
             <span>{greeting}</span>
           </div>
 
-          {/* Main Headline */}
+          {/* Main Headline (accent part is optional — omit it for a single designation) */}
           <h1 className="hero__headline">
-            {headlineRole}{' '}
-            <span className="hero__headline-accent">& {headlineAccent}</span>
+            {headlineRole}
+            {headlineAccent ? (
+              <>
+                {' '}
+                <span className="hero__headline-accent">{'& '}{headlineAccent}</span>
+              </>
+            ) : null}
           </h1>
 
           {/* Introductory Summary */}

@@ -76,7 +76,7 @@ export function usePortfolioData() {
                 : profile.headline,
               headlineAccent: profile.headline.includes('&')
                 ? profile.headline.split('&')[1].trim()
-                : 'Backend Architect',
+                : '',
               summary: profile.description || localPortfolioData.hero.summary,
               techStack: profile.tech_line || localPortfolioData.hero.techStack
             },
