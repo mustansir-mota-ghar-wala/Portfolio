@@ -14,5 +14,4 @@ export const personalConfig = {
   liveStore: "https://burhani.store",
   resumePath: "/resume/Mustansir_Resume.pdf",
   whatsappUrl: "https://wa.me/917742752753?text=Hi%20Mustansir,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!",
-  profileImage: "/images/profile.jpeg",
 };

@@ -10,27 +10,6 @@ import {
 import { personalConfig } from '../../data/config';
 import './Hero.css';
 
-function ProfileAvatar({ imageSrc, initials }) {
-  const [imgError, setImgError] = React.useState(false);
-
-  if (imageSrc && !imgError) {
-    return (
-      <img
-        src={imageSrc}
-        alt={`${personalConfig.name} profile photo`}
-        className="hero__card-avatar-img"
-        onError={() => setImgError(true)}
-      />
-    );
-  }
-
-  return (
-    <div className="hero__card-avatar" aria-hidden="true">
-      {initials}
-    </div>
-  );
-}
-
 export default function Hero({ data }) {
   const {
     greeting = `Hi, I'm ${personalConfig.firstName}`,
@@ -133,8 +112,10 @@ export default function Hero({ data }) {
         {/* Right Column: Visual Identity Card (Desktop) */}
         <div className="hero__visual-card-col reveal">
           <div className="hero__card">
-            {/* Profile Photo (falls back to initials monogram if image fails) */}
-            <ProfileAvatar imageSrc={personalConfig.profileImage} initials={personalConfig.initials} />
+            {/* 80x80 Gradient Avatar Monogram */}
+            <div className="hero__card-avatar" aria-hidden="true">
+              {personalConfig.initials}
+            </div>
 
             <h2 className="hero__card-name">{personalConfig.name}</h2>
             <p className="hero__card-subtitle">{personalConfig.roleHeadline}</p>
