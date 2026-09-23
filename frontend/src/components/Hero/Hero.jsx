@@ -18,7 +18,8 @@ export default function Hero({ data }) {
     summary = personalConfig.specialtyTagline,
     techStack = ["Python", "Java", "FastAPI", "React.js", "PostgreSQL", "Docker", "CI/CD"],
     chips = ["Python", "Java", "Django 6.0", "FastAPI", "React.js", "PostgreSQL", "Docker", "GitHub Actions", "DevOps"],
-    status = "Open to opportunities"
+    status = "Open to opportunities",
+    profileImage = personalConfig.profileImage
   } = data || {};
 
   return (
@@ -111,30 +112,46 @@ export default function Hero({ data }) {
 
         {/* Right Column: Visual Identity Card (Desktop) */}
         <div className="hero__visual-card-col reveal">
-          <div className="hero__card">
-            {/* 80x80 Gradient Avatar Monogram */}
-            <div className="hero__card-avatar" aria-hidden="true">
-              {personalConfig.initials}
+          <div className="hero__card hero__card--photo">
+            {/* Full Card Background Image with Monogram Fallback */}
+            <div className="hero__card-bg-wrap">
+              {profileImage ? (
+                <img
+                  src={profileImage}
+                  alt={personalConfig.name}
+                  className="hero__card-bg-img"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallback = e.currentTarget.parentElement.querySelector('.hero__card-bg-fallback');
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+              ) : null}
+              <div
+                className="hero__card-bg-fallback"
+                style={{ display: profileImage ? 'none' : 'flex' }}
+                aria-hidden="true"
+              >
+                <span>{personalConfig.initials}</span>
+              </div>
             </div>
 
-            <h2 className="hero__card-name">{personalConfig.name}</h2>
-            <p className="hero__card-subtitle">{personalConfig.roleHeadline}</p>
+            {/* Bottom Translucent Frosted Glass Layer */}
+            <div className="hero__card-overlay">
+              {/* Cloud of mini skill badge chips */}
+              <div className="hero__card-chips" aria-label="Key Technologies">
+                {chips.map((chip) => (
+                  <span key={chip} className="badge hero__card-badge">
+                    {chip}
+                  </span>
+                ))}
+              </div>
 
-            <div className="hero__card-divider" />
-
-            {/* Cloud of mini skill badge chips */}
-            <div className="hero__card-chips" aria-label="Key Technologies">
-              {chips.map((chip) => (
-                <span key={chip} className="badge">
-                  {chip}
-                </span>
-              ))}
-            </div>
-
-            {/* Live status badge */}
-            <div className="hero__card-status">
-              <span className="hero__status-dot" />
-              <span>{status}</span>
+              {/* Live status badge */}
+              <div className="hero__card-status">
+                <span className="hero__status-dot" />
+                <span>{status}</span>
+              </div>
             </div>
           </div>
         </div>

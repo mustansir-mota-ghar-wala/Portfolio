@@ -1,7 +1,7 @@
 import shutil
 import os
 
-src = r'A:\portfolio\media\projects\WhatsApp Image 2026-09-23 at 04.25.01.jpeg'
+src = r'A:\portfolio\media\projects\purple shirt pic 2 mustansir.jpeg'
 dst_dir = r'A:\portfolio\frontend\public\images'
 dst = os.path.join(dst_dir, 'profile.jpeg')
 

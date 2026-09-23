@@ -91,7 +91,26 @@ export default function Navbar({ theme, onToggleTheme }) {
       <div className="container navbar__container">
         {/* Brand Logo & Name */}
         <a href="#" className="navbar__brand" aria-label="Mustansir Home">
-          <div className="navbar__logo-box">{personalConfig.logoLetter}</div>
+          <div className="navbar__logo-box">
+            {personalConfig.profileImage ? (
+              <img
+                src={personalConfig.profileImage}
+                alt={personalConfig.name}
+                className="navbar__logo-img"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.nextElementSibling;
+                  if (fallback) fallback.style.display = 'inline';
+                }}
+              />
+            ) : null}
+            <span
+              className="navbar__logo-letter"
+              style={{ display: personalConfig.profileImage ? 'none' : 'inline' }}
+            >
+              {personalConfig.logoLetter}
+            </span>
+          </div>
           <span className="navbar__brand-name">{personalConfig.name}</span>
         </a>
 

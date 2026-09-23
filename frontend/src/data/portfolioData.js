@@ -17,7 +17,8 @@ export const portfolioData = {
       "GitHub Actions",
       "DevOps"
     ],
-    status: "Open to opportunities"
+    status: "Open to opportunities",
+    profileImage: "/images/profile.jpeg"
   },
 
   about: {
