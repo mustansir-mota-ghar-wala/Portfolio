@@ -14,8 +14,9 @@ export const portfolioData = {
       "React.js",
       "PostgreSQL",
       "Docker",
-      "GitHub Actions",
-      "DevOps"
+      "Kubernetes",
+      "AWS",
+      "CI/CD"
     ],
     status: "Open to opportunities",
     profileImage: "/images/profile.jpeg"
@@ -33,7 +34,7 @@ export const portfolioData = {
       "React.js & Modern Component Architecture",
       "Automated Accounting & Statutory GST Engines",
       "PostgreSQL Query Optimization & Database Design",
-      "DevOps, Docker & Automated CI/CD Pipelines",
+      "DevOps, Docker, Kubernetes & CI/CD Pipelines",
       "Cloud Deployments (Render) & Groq LLM Integrations"
     ],
     highlights: [
@@ -76,7 +77,7 @@ export const portfolioData = {
         id: "devops",
         title: "DevOps & Cloud",
         icon: "🛠️",
-        skills: ["Git", "GitHub", "Render Cloud", "GitHub Actions CI", "Linux Shell", "Docker Basics", "Postman", "Vite"]
+        skills: ["Docker", "Kubernetes", "AWS", "CI/CD Pipelines", "GitHub Actions", "GitOps", "Prometheus & Grafana", "Linux Shell", "Render Cloud"]
       },
       {
         id: "fundamentals",
@@ -267,14 +268,14 @@ export const portfolioData = {
     subtitle: "Professional certifications and technical credentials.",
     items: [
       {
-        id: "devops",
-        name: "DevOps & Cloud Engineering Certification",
-        issuer: "DevOps & Cloud Academy",
-        issuerBadge: "DevOps",
+        id: "devops-coursera",
+        name: "Practical DevOps Bootcamp for All (3 Courses)",
+        issuer: "Coursera · Packt",
+        issuerBadge: "Coursera Verified",
         year: "2026",
-        status: "Completed",
-        link: "#",
-        note: "Recently Completed — CI/CD Pipelines, Docker, Containerization & Cloud Deployment"
+        status: "Certified",
+        link: "https://coursera.org/verify/specialization/DHNB31FGUVAR",
+        note: "Completed 3-course specialization (Sep 2026) — Docker, Kubernetes, AWS, CI/CD automation, GitOps, Prometheus & Grafana monitoring."
       },
       {
         id: "coursera-python",

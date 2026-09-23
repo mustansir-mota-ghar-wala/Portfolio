@@ -69,14 +69,15 @@ SKILLS = [
     {
         "category": "DevOps & Cloud",
         "skills": [
-            "Git",
-            "GitHub",
-            "Render Cloud",
-            "GitHub Actions CI",
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "CI/CD Pipelines",
+            "GitHub Actions",
+            "GitOps",
+            "Prometheus & Grafana",
             "Linux Shell",
-            "Docker Basics",
-            "Postman",
-            "Vite"
+            "Render Cloud"
         ]
     },
     {
@@ -268,9 +269,9 @@ EDUCATION = [
 
 CERTIFICATIONS = [
     {
-        "name": "DevOps & Cloud Engineering Certification",
-        "issuer": "DevOps & Cloud Academy",
-        "url": None
+        "name": "Practical DevOps Bootcamp for All (3 Courses)",
+        "issuer": "Coursera · Packt",
+        "url": "https://coursera.org/verify/specialization/DHNB31FGUVAR"
     },
     {
         "name": "Learn Python Specialization (3 Courses)",
