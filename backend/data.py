@@ -218,15 +218,12 @@ EXPERIENCE = [
         "position": "Founder & Lead Full-Stack Engineer",
         "duration": "March 2026 - Present",
         "project_name": "Live Commercial Startup",
-        "description": (
-            "Architected, built, and launched an end-to-end commercial e-commerce and inventory automation system "
-            "from the ground up, currently serving real business operations and logistics."
-        ),
+        "description": "Architected and deployed an end-to-end e-commerce and business automation platform powering live operations.",
         "responsibilities": [
-            "Engineered full-stack web architecture using Django 6.0, PostgreSQL (Neon DB), and responsive React/JavaScript frontends.",
-            "Created an automated double-entry accounting engine recording debit/credit entries for transactions, generating live balance sheets.",
-            "Implemented secure Razorpay payment gateway integration with cryptographic webhook verification for online and COD orders.",
-            "Deployed and maintain production cloud infrastructure on Render using Gunicorn, WhiteNoise, and automated PostgreSQL backups."
+            "Built full-stack architecture with Django, PostgreSQL (Neon DB), and React.",
+            "Created automated double-entry accounting and real-time ledger tracking.",
+            "Integrated secure Razorpay payments with cryptographic webhook verification.",
+            "Managed production cloud deployments on Render with CI/CD automation."
         ],
         "start_year": "2026",
         "end_year": "Present"
@@ -237,15 +234,11 @@ EXPERIENCE = [
         "position": "Lead Backend Architect (SIH 2026)",
         "duration": "2026",
         "project_name": "MediPrep System",
-        "description": (
-            "Led system architecture and backend engineering for an innovative hardware-integrated medicine dispensing "
-            "and pharmacy compliance solution."
-        ),
+        "description": "Led backend engineering for a hardware-integrated smart pharmacy dispensing and compliance platform.",
         "responsibilities": [
-            "Designed and validated a 50-test end-to-end verification suite covering prescription ingestion, barcode validation, and billing.",
-            "Implemented a high-accuracy Drug-Drug Interaction (DDI) rule engine flagging severe pharmacological contraindications.",
-            "Built CDSCO regulatory modules including Schedule H1 digital register, CSV export for Drug Inspectors, and batch quarantine locks.",
-            "Engineered statutory 5% pharma GST billing engine with HSN 3004 tagging and double-billing prevention mechanisms."
+            "Developed Drug-Drug Interaction (DDI) rule engine to flag contraindications.",
+            "Engineered CDSCO digital registers, audit trails, and batch quarantine locks.",
+            "Built statutory 5% pharma GST billing engine with double-billing prevention."
         ],
         "start_year": "2026",
         "end_year": "2026"

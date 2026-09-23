@@ -7,7 +7,12 @@ export default function About({ data }) {
     sectionLabel = "ABOUT ME",
     title = "Who I Am",
     paragraphs = [],
-    currentFocus = []
+    currentFocus = [],
+    highlights = [
+      { label: "Education", value: "MCA (Pursuing)", detail: "Vishwakarma Univ." },
+      { label: "Commercial", value: "burhani.store", detail: "Live Platform" },
+      { label: "Specialty", value: "Backend & DevOps", detail: "Python · React · CI/CD" }
+    ]
   } = data || {};
 
   return (
@@ -21,13 +26,26 @@ export default function About({ data }) {
 
         {/* 2-Column Grid */}
         <div className="about__grid">
-          {/* Left Column: Narrative */}
+          {/* Left Column: Narrative + Highlights */}
           <div className="about__narrative reveal">
-            {paragraphs.map((p, index) => (
-              <p key={index} className="about__paragraph">
-                {p}
-              </p>
-            ))}
+            <div className="about__paragraphs">
+              {paragraphs.map((p, index) => (
+                <p key={index} className="about__paragraph">
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            {/* Quick Highlights / Stats Grid */}
+            <div className="about__highlights">
+              {highlights.map((h, index) => (
+                <div key={index} className="about__highlight-card">
+                  <span className="about__highlight-label">{h.label}</span>
+                  <strong className="about__highlight-value">{h.value}</strong>
+                  <span className="about__highlight-detail">{h.detail}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Right Column: Sticky Current Focus Card */}

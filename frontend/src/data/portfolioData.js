@@ -25,20 +25,21 @@ export const portfolioData = {
     sectionLabel: "ABOUT ME",
     title: "Who I Am",
     paragraphs: [
-      "I am a passionate Full-Stack Developer with a deep-seated dedication to architectural integrity, clean code, and zero-touch business automation. My engineering journey is defined by designing production-grade software that bridges robust backend systems with intuitive, responsive user experiences.",
-      "With extensive hands-on experience in Python and the Django ecosystem, I have architected and deployed live commercial platforms like Burhani (burhani.store), structured relational database schemas in PostgreSQL, and built statutory compliance engines for Smart India Hackathon 2026 (MediPrep). I specialize in automated double-entry accounting engines, statutory GST calculations, and mission-critical API integrations ranging from Razorpay payment verification to Groq AI LLM interfaces. My core delivery stack is Python (Django, FastAPI) with React on the front end, backed by strong object-oriented fundamentals in Java and C/C++.",
-      "Currently pursuing my Master of Computer Applications (MCA) at Vishwakarma University, Pune, I continually level up my engineering capabilities—recently completing specialized training in DevOps & Cloud Engineering, CI/CD pipelines, and containerization. My goal is to engineer resilient digital systems that solve high-impact commercial problems."
+      "Full-Stack & DevOps Engineer specializing in resilient backend systems and responsive web applications using Python (Django, FastAPI), React, and Java.",
+      "Experienced in architecting live commercial platforms like Burhani (burhani.store), integrating Razorpay and Groq AI, and setting up automated CI/CD pipelines. Currently pursuing MCA at Vishwakarma University, Pune."
     ],
     currentFocus: [
       "Django 6.0, FastAPI & High-Throughput REST APIs",
       "React.js & Modern Component Architecture",
-      "Automated Double-Entry Accounting & GST Engines",
-      "PostgreSQL Query Optimization & Indexing",
-      "Cloud Deployments (Render, Gunicorn, WhiteNoise)",
-      "Hardware-Integrated IoT Verification (Barcode/Speech)",
-      "DevOps CI/CD Pipelines & Containerization",
-      "Java & Object-Oriented Design",
-      "LLM & Groq AI Agent Integrations"
+      "Automated Accounting & Statutory GST Engines",
+      "PostgreSQL Query Optimization & Database Design",
+      "DevOps, Docker & Automated CI/CD Pipelines",
+      "Cloud Deployments (Render) & Groq LLM Integrations"
+    ],
+    highlights: [
+      { label: "Education", value: "MCA (Pursuing)", detail: "Vishwakarma Univ." },
+      { label: "Commercial", value: "burhani.store", detail: "Live Platform" },
+      { label: "Specialty", value: "Backend & DevOps", detail: "Python · React · CI/CD" }
     ]
   },
 
@@ -199,12 +200,12 @@ export const portfolioData = {
         location: "Pune, Maharashtra",
         projectTag: "Live Commercial Startup",
         description:
-          "Architected, built, and launched an end-to-end commercial e-commerce and inventory automation system from the ground up, currently serving real business operations and logistics.",
+          "Architected and deployed an end-to-end e-commerce and business automation platform powering live operations.",
         responsibilities: [
-          "Engineered full-stack web architecture using Django 6.0, PostgreSQL (Neon DB), and responsive React/JavaScript frontends.",
-          "Created an automated double-entry accounting engine recording debit/credit entries for transactions, generating live balance sheets.",
-          "Implemented secure Razorpay payment gateway integration with cryptographic webhook verification for online and COD orders.",
-          "Deployed and maintain production cloud infrastructure on Render using Gunicorn, WhiteNoise, and automated PostgreSQL backups."
+          "Built full-stack architecture with Django, PostgreSQL (Neon DB), and React.",
+          "Created automated double-entry accounting and real-time ledger tracking.",
+          "Integrated secure Razorpay payments with cryptographic webhook verification.",
+          "Managed production cloud deployments on Render with CI/CD automation."
         ]
       },
       {
@@ -218,12 +219,11 @@ export const portfolioData = {
         location: "Pune, Maharashtra",
         projectTag: "MediPrep System",
         description:
-          "Led system architecture and backend engineering for an innovative hardware-integrated medicine dispensing and pharmacy compliance solution.",
+          "Led backend engineering for a hardware-integrated smart pharmacy dispensing and compliance platform.",
         responsibilities: [
-          "Designed and validated a 50-test end-to-end verification suite covering prescription ingestion, barcode validation, and billing.",
-          "Implemented a high-accuracy Drug-Drug Interaction (DDI) rule engine flagging severe pharmacological contraindications.",
-          "Built CDSCO regulatory modules including Schedule H1 digital register, CSV export for Drug Inspectors, and batch quarantine locks.",
-          "Engineered statutory 5% pharma GST billing engine with HSN 3004 tagging and double-billing prevention mechanisms."
+          "Developed Drug-Drug Interaction (DDI) rule engine to flag contraindications.",
+          "Engineered CDSCO digital registers, audit trails, and batch quarantine locks.",
+          "Built statutory 5% pharma GST billing engine with double-billing prevention."
         ]
       }
     ]
