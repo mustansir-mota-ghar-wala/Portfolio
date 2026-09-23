@@ -298,13 +298,13 @@ export const portfolioData = {
       },
       {
         id: "java-samyak",
-        name: "Core & Advanced Java Training with Project Work",
-        issuer: "Samyak Classes",
-        issuerBadge: "Samyak Classes",
+        name: "Certificate of Excellence in Core & Adv. Java",
+        issuer: "Samyak Computer Classes",
+        issuerBadge: "Samyak (ISO 9001:2015)",
         year: "2023",
-        status: "Completed",
-        link: "#",
-        note: "Enterprise Java architecture, OOP concepts, multi-threading, and JDBC project development"
+        status: "Certified",
+        link: "/images/certificates/samyak_java_certificate.jpg",
+        note: "Completed Core & Advanced Java training with project work (Reg: C/1232998) at Samyak Computer Classes, Indore. Graded with Excellence."
       },
       {
         id: "cpp-samyak",

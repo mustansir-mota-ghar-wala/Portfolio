@@ -283,9 +283,9 @@ CERTIFICATIONS = [
         "url": None
     },
     {
-        "name": "Core & Advanced Java Training with Project Work",
-        "issuer": "Samyak Classes",
-        "url": None
+        "name": "Certificate of Excellence in Core & Adv. Java",
+        "issuer": "Samyak Computer Classes (ISO 9001:2015)",
+        "url": "/images/certificates/samyak_java_certificate.jpg"
     },
     {
         "name": "Certificate of Excellence in C/C++",
