@@ -48,14 +48,23 @@ export default function Skills({ data }) {
     return list;
   }, [categories]);
 
-  // Filter skills by category and search
+  // Separate active category skills vs other skills for prioritized display
+  const { activeCategorySkills, otherSkills } = useMemo(() => {
+    if (activeCategory === 'all') {
+      return { activeCategorySkills: allSkillsList, otherSkills: [] };
+    }
+    const active = allSkillsList.filter((item) => item.categoryId === activeCategory);
+    const others = allSkillsList.filter((item) => item.categoryId !== activeCategory);
+    return { activeCategorySkills: active, otherSkills: others };
+  }, [allSkillsList, activeCategory]);
+
+  // Filter skills when user is searching
   const filteredSkills = useMemo(() => {
-    return allSkillsList.filter((item) => {
-      const matchesCategory = activeCategory === 'all' || item.categoryId === activeCategory;
-      const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase().trim());
-      return matchesCategory && matchesSearch;
-    });
-  }, [allSkillsList, activeCategory, searchQuery]);
+    if (!searchQuery.trim()) return allSkillsList;
+    return allSkillsList.filter((item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase().trim())
+    );
+  }, [allSkillsList, searchQuery]);
 
   // Selected category data
   const currentCategoryObj = useMemo(() => {
@@ -146,7 +155,11 @@ export default function Skills({ data }) {
                 <h3 className="skills__tile-title">Tech Chip Matrix</h3>
               </div>
               <span className="skills__tile-counter">
-                {filteredSkills.length} of {allSkillsList.length} Skills
+                {searchQuery.trim()
+                  ? `${filteredSkills.length} matches`
+                  : activeCategory === 'all'
+                  ? `${allSkillsList.length} Skills`
+                  : `${activeCategorySkills.length} Focus • ${allSkillsList.length} Total`}
               </span>
             </div>
 
@@ -173,10 +186,37 @@ export default function Skills({ data }) {
               )}
             </div>
 
-            {/* Scrollable / Flowing Matrix Chips */}
+            {/* Scrollable & Filled Matrix Chips */}
             <div className="skills__matrix-chips">
-              {filteredSkills.length > 0 ? (
-                filteredSkills.map((item) => (
+              {searchQuery.trim() ? (
+                /* Search Filter Results */
+                filteredSkills.length > 0 ? (
+                  filteredSkills.map((item) => (
+                    <div
+                      key={item.name}
+                      className="badge skills__matrix-chip"
+                      title={`Domain: ${item.categoryTitle}`}
+                    >
+                      <span className="skills__chip-icon">{item.categoryIcon}</span>
+                      <span className="skills__chip-name">{item.name}</span>
+                      <span className="skills__chip-category">{item.categoryTitle.split(' ')[0]}</span>
+                    </div>
+                  ))
+                ) : (
+                  <div className="skills__empty-search">
+                    <p>No skills match "<strong>{searchQuery}</strong>".</p>
+                    <button
+                      type="button"
+                      className="btn btn-secondary btn-sm"
+                      onClick={() => setSearchQuery('')}
+                    >
+                      Clear Search
+                    </button>
+                  </div>
+                )
+              ) : activeCategory === 'all' ? (
+                /* All Skills */
+                allSkillsList.map((item) => (
                   <div
                     key={item.name}
                     className="badge skills__matrix-chip"
@@ -188,19 +228,42 @@ export default function Skills({ data }) {
                   </div>
                 ))
               ) : (
-                <div className="skills__empty-search">
-                  <p>No skills match "<strong>{searchQuery}</strong>".</p>
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-sm"
-                    onClick={() => {
-                      setSearchQuery('');
-                      setActiveCategory('all');
-                    }}
-                  >
-                    Reset Filters
-                  </button>
-                </div>
+                /* Selected Domain First, Followed by All Other Skills */
+                <>
+                  <div className="skills__matrix-group-label">
+                    <span>{currentCategoryObj ? `${currentCategoryObj.icon} ${currentCategoryObj.title} Focus` : 'Focused Domain'}</span>
+                    <span className="skills__matrix-group-badge">{activeCategorySkills.length} tools</span>
+                  </div>
+
+                  {activeCategorySkills.map((item) => (
+                    <div
+                      key={item.name}
+                      className="badge skills__matrix-chip skills__matrix-chip--featured"
+                      title={`Domain: ${item.categoryTitle}`}
+                    >
+                      <span className="skills__chip-icon">{item.categoryIcon}</span>
+                      <span className="skills__chip-name">{item.name}</span>
+                      <span className="skills__chip-category skills__chip-category--featured">Selected</span>
+                    </div>
+                  ))}
+
+                  <div className="skills__matrix-group-label skills__matrix-group-label--secondary">
+                    <span>Other Technologies in Toolkit</span>
+                    <span className="skills__matrix-group-badge">{otherSkills.length} tools</span>
+                  </div>
+
+                  {otherSkills.map((item) => (
+                    <div
+                      key={item.name}
+                      className="badge skills__matrix-chip skills__matrix-chip--subtle"
+                      title={`Domain: ${item.categoryTitle}`}
+                    >
+                      <span className="skills__chip-icon">{item.categoryIcon}</span>
+                      <span className="skills__chip-name">{item.name}</span>
+                      <span className="skills__chip-category">{item.categoryTitle.split(' ')[0]}</span>
+                    </div>
+                  ))}
+                </>
               )}
             </div>
           </div>
