@@ -273,9 +273,9 @@ CERTIFICATIONS = [
         "url": None
     },
     {
-        "name": "Python using AI",
+        "name": "Python using AI Workshop",
         "issuer": "AI for Techies",
-        "url": None
+        "url": "/images/certificates/python_ai_certificate.pdf"
     },
     {
         "name": "AI Tools and ChatGPT",

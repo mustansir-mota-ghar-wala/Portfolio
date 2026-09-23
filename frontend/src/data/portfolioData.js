@@ -278,13 +278,13 @@ export const portfolioData = {
       },
       {
         id: "python-ai",
-        name: "Python using AI",
+        name: "Python using AI Workshop",
         issuer: "AI for Techies",
         issuerBadge: "AI for Techies",
         year: "2026",
         status: "Certified",
-        link: "#",
-        note: "AI-accelerated Python engineering, automated code workflows, and LLM integrations"
+        link: "/images/certificates/python_ai_certificate.pdf",
+        note: "Issued March 1st, 2026 — Interactive visualizations, AI-assisted debugging, and accelerated Python code generation."
       },
       {
         id: "chatgpt-be10x",
