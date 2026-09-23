@@ -15,6 +15,37 @@ export default function Navbar({ theme, onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [showThemeHint, setShowThemeHint] = useState(false);
+
+  // Check if first-time visitor to gently introduce theme toggle
+  useEffect(() => {
+    const hasSeenHint = localStorage.getItem('hasSeenThemeHint');
+    if (!hasSeenHint) {
+      const showTimer = setTimeout(() => {
+        setShowThemeHint(true);
+      }, 1200);
+
+      const hideTimer = setTimeout(() => {
+        setShowThemeHint(false);
+        localStorage.setItem('hasSeenThemeHint', 'true');
+      }, 9500);
+
+      return () => {
+        clearTimeout(showTimer);
+        clearTimeout(hideTimer);
+      };
+    }
+  }, []);
+
+  const dismissHint = () => {
+    setShowThemeHint(false);
+    localStorage.setItem('hasSeenThemeHint', 'true');
+  };
+
+  const handleToggleTheme = () => {
+    dismissHint();
+    onToggleTheme();
+  };
 
   // Handle scroll class
   useEffect(() => {
@@ -165,16 +196,37 @@ export default function Navbar({ theme, onToggleTheme }) {
             <span>Resume</span>
           </a>
 
-          {/* Dark / Light Mode Toggle */}
-          <button
-            type="button"
-            className="btn-icon navbar__toggle-btn"
-            onClick={onToggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
-          </button>
+          {/* Dark / Light Mode Toggle with First-Time Visitor Tip */}
+          <div className="navbar__theme-wrapper">
+            <button
+              type="button"
+              className="btn-icon navbar__toggle-btn"
+              onClick={handleToggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
+            </button>
+
+            {showThemeHint && (
+              <div className="theme-hint-popover" role="status" aria-live="polite">
+                <span className="theme-hint-icon" aria-hidden="true">💡</span>
+                <div className="theme-hint-content">
+                  <p className="theme-hint-text">
+                    Prefer dark mode? Click here to switch anytime!
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className="theme-hint-close"
+                  onClick={dismissHint}
+                  aria-label="Dismiss theme tip"
+                >
+                  <FiX size={14} />
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* Mobile Hamburger Button */}
           <button
