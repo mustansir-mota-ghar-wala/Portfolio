@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         <p className="footer__copyright">
-          © {currentYear} {personalConfig.name}. Designed & built with React & Vanilla CSS tokens.
+          © {currentYear} {personalConfig.name}. All rights reserved.
         </p>
       </div>
     </footer>
