@@ -308,13 +308,13 @@ export const portfolioData = {
       },
       {
         id: "cpp-samyak",
-        name: "C/C++ Training with Project Work",
-        issuer: "Samyak Classes",
-        issuerBadge: "Samyak Classes",
+        name: "Certificate of Excellence in C/C++",
+        issuer: "Samyak Computer Classes",
+        issuerBadge: "Samyak (ISO 9001:2015)",
         year: "2023",
-        status: "Completed",
-        link: "#",
-        note: "Low-level memory management, pointers, data structures, and algorithm design"
+        status: "Certified",
+        link: "/images/certificates/samyak_cpp_certificate.jpg",
+        note: "Completed C/C++ training with project work (Reg: C/1232998) at Samyak Computer Classes, Indore. Graded with Excellence."
       }
     ]
   },

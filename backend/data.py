@@ -288,9 +288,9 @@ CERTIFICATIONS = [
         "url": None
     },
     {
-        "name": "C/C++ Training with Project Work",
-        "issuer": "Samyak Classes",
-        "url": None
+        "name": "Certificate of Excellence in C/C++",
+        "issuer": "Samyak Computer Classes (ISO 9001:2015)",
+        "url": "/images/certificates/samyak_cpp_certificate.jpg"
     }
 ]
 

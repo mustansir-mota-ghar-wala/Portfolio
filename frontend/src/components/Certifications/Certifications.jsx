@@ -45,6 +45,7 @@ export default function Certifications({ data }) {
                     rel="noopener noreferrer"
                     className="btn btn-secondary certs__btn"
                   >
+                    <FiAward size={14} />
                     <span>View Certificate</span>
                     <FiExternalLink size={14} />
                   </a>
