@@ -59,7 +59,7 @@ export default function Navbar({ theme, onToggleTheme }) {
 
   // Handle section highlighting with IntersectionObserver
   useEffect(() => {
-    const sectionIds = ['about', 'skills', 'projects', 'experience', 'education', 'contact'];
+    const sectionIds = ['projects', 'skills', 'experience', 'education', 'contact'];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -105,9 +105,8 @@ export default function Navbar({ theme, onToggleTheme }) {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { label: 'About', href: '#about', id: 'about' },
-    { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Projects', href: '#projects', id: 'projects' },
+    { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Education', href: '#education', id: 'education' },
     { label: 'Contact', href: '#contact', id: 'contact' }

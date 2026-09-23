@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
+import Skills from './components/Skills/Skills';
 import Experience from './components/Experience/Experience';
 import Education from './components/Education/Education';
 import Certifications from './components/Certifications/Certifications';
@@ -46,9 +45,8 @@ export default function App() {
 
       <main id="main-content">
         <Hero data={data.hero} />
-        <About data={data.about} />
-        <Skills data={data.skills} />
         <Projects data={data.projects} />
+        <Skills data={data.skills} />
         <Experience data={data.experience} />
         <Education data={data.education} />
         <Certifications data={data.certifications} />
