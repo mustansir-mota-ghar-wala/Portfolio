@@ -273,6 +273,11 @@ CERTIFICATIONS = [
         "url": None
     },
     {
+        "name": "Learn Python Specialization (3 Courses)",
+        "issuer": "Coursera",
+        "url": "https://coursera.org/verify/specialization/HBUQGYWUT4WT"
+    },
+    {
         "name": "Python using AI Workshop",
         "issuer": "AI for Techies",
         "url": "/images/certificates/python_ai_certificate.pdf"

@@ -277,6 +277,16 @@ export const portfolioData = {
         note: "Recently Completed — CI/CD Pipelines, Docker, Containerization & Cloud Deployment"
       },
       {
+        id: "coursera-python",
+        name: "Learn Python Specialization (3 Courses)",
+        issuer: "Coursera",
+        issuerBadge: "Coursera Verified",
+        year: "2026",
+        status: "Certified",
+        link: "https://coursera.org/verify/specialization/HBUQGYWUT4WT",
+        note: "Completed 3-course specialization (Jul 2026) — Core Python syntax, OOP, lambda functions, algorithms, and modular design."
+      },
+      {
         id: "python-ai",
         name: "Python using AI Workshop",
         issuer: "AI for Techies",
