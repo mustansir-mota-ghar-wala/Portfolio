@@ -86,7 +86,7 @@ export function usePortfolioData() {
               categories: skills.map((cat, index) => {
                 const localMatch = localPortfolioData.skills.categories[index] || {};
                 return {
-                  id: cat.category.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+                  id: localMatch.id || cat.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
                   title: cat.category,
                   icon: localMatch.icon || '⚙️',
                   skills: cat.skills
