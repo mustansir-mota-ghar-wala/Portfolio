@@ -27,6 +27,28 @@ export default function Hero({ data }) {
       <div className="container hero__container">
         {/* Left Column: Core Introduction */}
         <div className="hero__content reveal">
+          {/* Mobile-Only Top-Right Profile Photo */}
+          <div className="hero__mobile-avatar" aria-hidden="true">
+            {profileImage ? (
+              <img
+                src={profileImage}
+                alt={personalConfig.name}
+                className="hero__mobile-avatar-img"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.parentElement.querySelector('.hero__mobile-avatar-fallback');
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+            ) : null}
+            <div
+              className="hero__mobile-avatar-fallback"
+              style={{ display: profileImage ? 'none' : 'flex' }}
+            >
+              <span>{personalConfig.initials}</span>
+            </div>
+          </div>
+
           {/* Greeting Pill */}
           <div className="hero__greeting-pill">
             <span className="hero__pulse-dot" />
