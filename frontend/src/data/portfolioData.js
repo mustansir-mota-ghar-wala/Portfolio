@@ -243,9 +243,17 @@ export const portfolioData = {
         location: "Pune, Maharashtra",
         duration: "2025 - 2027",
         status: "Pursuing",
-        cgpa: "CGPA: 8.5",
+        cgpa: "CGPA: 8.5 / 10",
+        honors: "Postgraduate Honors",
         description:
-          "Specializing in advanced software engineering, cloud systems, distributed databases, and full-stack enterprise development."
+          "Specializing in advanced software engineering, cloud architecture, distributed database systems, and enterprise application design.",
+        modules: [
+          "Cloud Systems",
+          "Distributed Databases",
+          "Advanced Software Engineering",
+          "Enterprise Full-Stack",
+          "System Design"
+        ]
       },
       {
         id: "bsc",
@@ -256,8 +264,16 @@ export const portfolioData = {
         duration: "2021 - 2024",
         status: "Completed",
         cgpa: "First Class with Distinction",
+        honors: "Degree Conferred with Distinction",
         description:
-          "Rigorous foundation in Object-Oriented Programming (Java, C++), Data Structures & Algorithms, Relational Databases, and Operating Systems."
+          "Rigorous foundational coursework in algorithmic problem solving, object-oriented software engineering, database management, and low-level computer systems.",
+        modules: [
+          "Data Structures & Algorithms",
+          "OOP (Java & C++)",
+          "Relational Databases (SQL)",
+          "Operating Systems",
+          "Computer Networks"
+        ]
       }
     ]
   },

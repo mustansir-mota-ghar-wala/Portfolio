@@ -148,8 +148,10 @@ export function usePortfolioData() {
                   location: edu.location,
                   duration: edu.duration,
                   status: edu.status || 'Completed',
-                  cgpa: edu.cgpa,
-                  description: localMatch.description || ''
+                  cgpa: edu.cgpa || localMatch.cgpa || '',
+                  honors: localMatch.honors || '',
+                  description: localMatch.description || '',
+                  modules: localMatch.modules || []
                 };
               })
             },

@@ -1,12 +1,19 @@
 import React from 'react';
-import { FiMapPin, FiCalendar } from 'react-icons/fi';
+import {
+  FiMapPin,
+  FiCalendar,
+  FiAward,
+  FiCheckCircle,
+  FiBookOpen,
+  FiShield
+} from 'react-icons/fi';
 import './Education.css';
 
 export default function Education({ data }) {
   const {
     sectionLabel = "ACADEMIC BACKGROUND",
-    title = "Education",
-    subtitle = "Formal academic qualifications in computer applications and science.",
+    title = "Education & Credentials",
+    subtitle = "Formal academic qualifications, verified degrees, and core computer science specializations.",
     items = []
   } = data || {};
 
@@ -20,49 +27,102 @@ export default function Education({ data }) {
           {subtitle && <p className="section__subtitle">{subtitle}</p>}
         </div>
 
-        {/* Education Cards Grid */}
-        <div className="education__grid">
-          {items.map((item) => (
-            <div key={item.id} className="card education__card reveal">
-              {/* Top 3px gradient accent bar */}
-              <div className="education__accent-bar" aria-hidden="true" />
+        {/* Digital Credential Cards Grid */}
+        <div className="education__credentials-grid">
+          {items.map((item, idx) => {
+            const isPursuing =
+              item.status?.toLowerCase().includes('pursuing') ||
+              item.status?.toLowerCase().includes('progress');
 
-              {/* Header with 56x56 monogram & degree info */}
-              <div className="education__header">
-                <div className="education__monogram" aria-hidden="true">
-                  {item.monogram}
+            return (
+              <div key={item.id || idx} className="edu-credential-card reveal">
+                {/* Subtle Background Watermark */}
+                <div className="edu-credential__watermark" aria-hidden="true">
+                  <FiShield />
                 </div>
 
-                <div className="education__info">
-                  <h3 className="education__degree">{item.degree}</h3>
-                  <div className="education__institution">{item.institution}</div>
-                  <div className="education__location">
-                    <FiMapPin size={13} />
-                    <span>{item.location}</span>
+                {/* Top Bar: Ribbon & Performance Pill */}
+                <div className="edu-credential__top-bar">
+                  <div className="edu-credential__ribbon-tag">
+                    <FiAward className="edu-credential__ribbon-icon" />
+                    <span>DEGREE CREDENTIAL</span>
+                  </div>
+
+                  <div className="edu-credential__top-badges">
+                    {item.cgpa && (
+                      <span className="edu-credential__score-pill">
+                        {item.cgpa}
+                      </span>
+                    )}
+                    <span
+                      className={`edu-credential__status-pill ${
+                        isPursuing ? 'status--active' : 'status--completed'
+                      }`}
+                    >
+                      <span className="edu-credential__status-dot" />
+                      <span>{isPursuing ? 'Pursuing' : 'Conferred'}</span>
+                    </span>
                   </div>
                 </div>
-              </div>
 
-              {item.description && (
-                <p className="education__desc">{item.description}</p>
-              )}
+                {/* Degree & Institution Info */}
+                <div className="edu-credential__main">
+                  <div className="edu-credential__seal" aria-hidden="true">
+                    <span>{item.monogram || 'DEG'}</span>
+                  </div>
 
-              {/* Card Footer */}
-              <div className="education__footer">
-                <div className="education__status-wrap">
-                  <span className="badge badge-status">{item.status}</span>
-                  <span className="education__duration">
-                    <FiCalendar size={13} style={{ display: 'inline', marginRight: '4px' }} />
-                    {item.duration}
-                  </span>
+                  <div className="edu-credential__details">
+                    <h3 className="edu-credential__degree">{item.degree}</h3>
+                    <div className="edu-credential__meta-line">
+                      <span className="edu-credential__institution">
+                        <FiBookOpen size={13} />
+                        {item.institution}
+                      </span>
+                      <span className="edu-credential__meta-sep">•</span>
+                      <span className="edu-credential__meta-sub">
+                        <FiMapPin size={12} />
+                        {item.location}
+                      </span>
+                      <span className="edu-credential__meta-sep">•</span>
+                      <span className="edu-credential__meta-sub">
+                        <FiCalendar size={12} />
+                        {item.duration}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                {item.cgpa && (
-                  <div className="education__cgpa">{item.cgpa}</div>
+                {/* Description */}
+                {item.description && (
+                  <p className="edu-credential__desc">{item.description}</p>
                 )}
+
+                {/* Compact Coursework Tags */}
+                {item.modules && item.modules.length > 0 && (
+                  <div className="edu-credential__tags">
+                    {item.modules.map((mod, mIdx) => (
+                      <span key={mIdx} className="edu-credential__tag">
+                        {mod}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Compact Footer */}
+                <div className="edu-credential__footer">
+                  <div className="edu-credential__verification">
+                    <FiCheckCircle size={13} className="edu-credential__verify-icon" />
+                    <span>Official University Record</span>
+                  </div>
+                  {item.honors && (
+                    <span className="edu-credential__honors-text">
+                      ★ {item.honors}
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
