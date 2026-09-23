@@ -288,13 +288,13 @@ export const portfolioData = {
       },
       {
         id: "chatgpt-be10x",
-        name: "AI Tools and ChatGPT",
-        issuer: "BE10X",
-        issuerBadge: "BE10X",
+        name: "AI Tools and ChatGPT Workshop",
+        issuer: "be10x",
+        issuerBadge: "be10x Verified",
         year: "2026",
         status: "Certified",
-        link: "#",
-        note: "Generative AI tools, prompt engineering, productivity automation, and workflow acceleration"
+        link: "/images/certificates/be10x_ai_tools_certificate.pdf",
+        note: "Issued March 1st, 2026 — Automated presentation design, AI data analysis, and rapid code generation & debugging."
       },
       {
         id: "java-samyak",

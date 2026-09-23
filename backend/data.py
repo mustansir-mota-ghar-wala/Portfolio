@@ -278,9 +278,9 @@ CERTIFICATIONS = [
         "url": "/images/certificates/python_ai_certificate.pdf"
     },
     {
-        "name": "AI Tools and ChatGPT",
-        "issuer": "BE10X",
-        "url": None
+        "name": "AI Tools and ChatGPT Workshop",
+        "issuer": "be10x",
+        "url": "/images/certificates/be10x_ai_tools_certificate.pdf"
     },
     {
         "name": "Certificate of Excellence in Core & Adv. Java",
